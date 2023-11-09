@@ -1,6 +1,6 @@
 /* Get Meals View */
 const meals = (req, res) => {
-    res.render('meals', {title: "Travler Getaways"})
+    res.render('meals', {title: "Meals"})
 };
 module.exports = {
     meals

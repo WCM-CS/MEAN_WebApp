@@ -1,6 +1,6 @@
 /* Get News View */
 const news = (req, res) => {
-    res.render('news', {title: "Travler Getaways"})
+    res.render('news', {title: "News"})
 };
 module.exports = {
     news

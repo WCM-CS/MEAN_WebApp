@@ -1,6 +1,6 @@
 /* Get About View */
 const about = (req, res) => {
-    res.render('about', {title: "Travler Getaways"})
+    res.render('about', {title: "About"})
 };
 module.exports = {
     about
