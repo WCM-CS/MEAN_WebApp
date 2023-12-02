@@ -1,0 +1,24 @@
+<div class="card ml-4" style="width: 18rem;">
+  <!-- Card header with trip name -->
+  <div class="card-header">{{ trip.name }}</div>
+  
+  <!-- Card image with trip thumbnail -->
+  <img src="assets/images/{{ trip.image }}" alt="trip thumbnail" class="card-img-top">
+  
+  <!-- Card body containing trip details -->
+  <div class="card-body">
+    <!-- Subtitle with resort name -->
+    <h6 class="card-subtitle mb-2 text-muted">{{ trip.resort }}</h6>
+    
+    <!-- Subtitle with trip length and cost per person -->
+    <p class="card-subtitle mt-3 mb-3 text-muted">
+      {{ trip.length }} only {{ trip.perPerson | currency: 'USD': true }} per person
+    </p>
+    
+    <!-- Card text with trip description (supporting HTML content) -->
+    <p class="card-text" [innerHTML]="trip.description"></p>
+    <div>
+      <button (click)="'editTrip(trip)" class=""btn btn-info">Edit</button>
+    </div>
+  </div>
+</div>

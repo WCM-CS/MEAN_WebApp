@@ -35,6 +35,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+app.use('/api', (req, res, next) => {
+  res.header('Access-control-Allow-Origin', 'http://localhost:4200');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Request-With, Content-Type, Accept');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT DELETE');
+  next();
+});
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/travel', travelRouter);
