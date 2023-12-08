@@ -57,9 +57,9 @@ app.use("/news", newsRouter);
 app.use("/meals", mealsRouter);
 app.use("/contact", contactRouter);
 app.use("/about", aboutRouter);
-
 app.use("/api", apiRouter);
 
+//Catch unauthorized users
 app.use((err, req, res, next) => {
   if (err.name === "UnauthorizedError") {
     res.status(401).json({ message: err.name + ": " + err.message });
